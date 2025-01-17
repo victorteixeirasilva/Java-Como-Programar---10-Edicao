@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 /*
     @Autor: Victor Teixeira Silva
 
@@ -18,7 +20,22 @@ Obese: 30 or greater
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+
+        String altura = JOptionPane.showInputDialog("Digite sua altura em Metro (Exemplo: 1.60");
+        String peso = JOptionPane.showInputDialog("Informe seu peso em quilogramas (Exemplo: 77.5");
+
+        double imc = Double.parseDouble(peso)/(Double.parseDouble(altura)*Double.parseDouble(altura));
+
+        JOptionPane.showMessageDialog(null,
+                "Seu IMC é: "+imc+"\n"+
+                        "================================\n" +
+                        "BMI VALUES\n" +
+                        "Underweight: less than 18.5\n" +
+                        "Normal: between 18.5 and 24.9\n" +
+                        "Overweight: beetween 25 and 29.9\n" +
+                        "Obese: 30 or greater\n" +
+                        "================================"
+        );
 
     }
 }
