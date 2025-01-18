@@ -15,10 +15,31 @@ cardíaca alvo da pessoa. Escreva um aplicativo Java que solicite as informaçõ
 HeartRates e imprima as informações a partir desse objeto - incluindo nome, sobrenome e data de nascimento da pessoa -
 calcule e imprima a idade da pessoa (em anos), seu intervalo de frequência cardíaca máxima e sua fequência cardíaca alvo.
 
+Use JOptionPane
 
+Anotações para solução:
 
+Escreva um aplicativo Java que solicite as informações da pessoa, instancie um objeto da classe
+HeartRates e imprima as informações a partir desse objeto - incluindo nome, sobrenome e data de nascimento da pessoa -
+calcule e imprima a idade da pessoa (em anos), seu intervalo de frequência cardíaca máxima e sua fequência cardíaca alvo.
 
+    1- frquência cardiaca máxima por minuto é 220 menos a idade em anos.
 
+    2- Sua frequência cardiaca alvo é um intervalo entre 50-85% da sua frequência cardíaca máxima.
+
+    3- Crie Primeiro uma classe chamada DateOfBirth, (Com os atributos dia/mês/ano).
+
+    4- Crie primeiro uma classe chamada HeartRates.
+
+    5- Os atributos da classe devem incluir o nome, sobrenome e data de nascimento da pessoa
+
+    6- Sua classe deve ter um construtor que receba esses dados como parâmetros. Para cada atributo forneça métodos set e get.
+
+    7- A classe DateOfBirth também deve incluir um método que calcule e retorne a idade (em anos)
+
+    8- A classe HeartRates dete incluir um método que calcule e retorne a frequência cardíaca máxima
+
+    9- A classe HeartRates dete incluir um método que calcule e retorne a frequência cardíaca alvo da pessoa.
 
  */
 
