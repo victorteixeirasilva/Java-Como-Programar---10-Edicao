@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 /*
     @Autor Victor Teixeira Silva
 
@@ -38,19 +40,70 @@ cardíaca alvo. Ele também deve exibir o gráfico de valores IMC do Exercício 
 
     5- forneça métodos set e get.
 
-    6- Adapte a classe HeartRates para Usar o HealthProfile para os calculos.
+    6- Adapte a classe HeartRates para Usar o HealthProfile para os cálculos.
 
     7- Crie a classe Imc adptando o código do exercicio 2.33.
 
     8- Crie um Front-End em JOptionPane que solicite as informações (Nome, Sobrenome, Sexo, Data de Nascimento, Altura(Metros) e Peso(Quilogramas)).
 
     9- Crie um Front-End em JOptionPane que mostre as informações pessoais
-    (Nome, Sobrenome, Sexo, Data de Nascimento, Altura, Peso, Idade em Anos, IMC, frequência cardiaca maxima, Intervalo de frequencia alvo e Grafico de valores IMC).
+    (Nome, Sobrenome, Sexo, Data de Nascimento, Altura, Peso,
+    Idade em Anos, IMC, frequência cardiaca maxima, intervalo de frequencia alvo e Grafico de valores IMC).
 
 
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+
+        JOptionPane.showMessageDialog(null,
+                "Bem Vindo! \n" +
+                        "Computadorização Dos Registros de Saúde \n" +
+                        "Desenvolvido por: Victor Teixeira Silva \n" +
+                        "Versão 1.0");
+
+        String firtsName = JOptionPane.showInputDialog("Informe seu primeiro nome:");
+        String lastName = JOptionPane.showInputDialog("Informe seu sobrenome:");
+        String sex = JOptionPane.showInputDialog("Informe seu sexo (F = Feminino / M = Masculino):");
+        String year = JOptionPane.showInputDialog("Informe o ano em que você nasceu (Exemplo = 2003):");
+        String month = JOptionPane.showInputDialog("Informe o mês em que você nasceu (Exemplo = 8):");
+        String day = JOptionPane.showInputDialog("Informe o dia em que você nasceu (Exemplo = 23):");
+        String height = JOptionPane.showInputDialog("Informe a sua altura em metros (Exemplo = 1.73):");
+        String weight = JOptionPane.showInputDialog("Informe a seu peso em quilogramas (Exemplo = 72.5):");
+
+        DateOfBirth dateOfBirth = new DateOfBirth(Integer.parseInt(day),Integer.parseInt(month),Integer.parseInt(year));
+
+        HealthProfile healthProfile = new HealthProfile(firtsName,lastName,sex,dateOfBirth,Double.parseDouble(height),Double.parseDouble(weight));
+
+
+        //(Nome, Sobrenome, Sexo, Data de Nascimento, Altura, Peso,
+        //Idade em Anos, IMC, frequência cardiaca maxima,
+        // intervalo de frequencia alvo e Grafico de valores IMC).
+
+        JOptionPane.showMessageDialog(null,
+                "\n" +
+                        "\n" +
+                        "Nome: " + healthProfile.getFirstName() + " " + healthProfile.getLastName() + ",\n" +
+                        "Sexo: " + healthProfile.getSexo() + ",\n" +
+                        "Data de Nascimento: " + dateOfBirth + ",\n" +
+                        "Altura: " + healthProfile.getHeight() + " metros,\n" +
+                        "Peso: " + healthProfile.getHeight() + " quilogramas, \n" +
+                        "Idade em Anos: " + dateOfBirth.ageInYears() + " anos,\n" +
+                        "IMC:" + Imc.myIMC(healthProfile) + ",\n" +
+                        "Frequência Cardiaca Maxima: " + HeartRates.maximumHeartRate(healthProfile) + ",\n" +
+                        "Intervalo de fequencia alvo: " + HeartRates.targetHeartRate(healthProfile) + ",\n" +
+                        "Abaixo segue grafico IMC para comparação:\n" + Imc.showImcGraph() + "\n" +
+                        "\n" +
+                        "\n");
+
+
+
+
+
+
+
+
+
+
+
     }
 }
