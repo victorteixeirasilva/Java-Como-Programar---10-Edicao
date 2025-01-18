@@ -27,9 +27,9 @@ calcule e imprima a idade da pessoa (em anos), seu intervalo de frequência card
 
     2- Sua frequência cardiaca alvo é um intervalo entre 50-85% da sua frequência cardíaca máxima.
 
-    3- Crie Primeiro uma classe chamada DateOfBirth, (Com os atributos dia/mês/ano).
+    3- Crie uma classe chamada DateOfBirth, (Com os atributos dia/mês/ano).
 
-    4- Crie primeiro uma classe chamada HeartRates.
+    4- Crie uma classe chamada HeartRates.
 
     5- Os atributos da classe devem incluir o nome, sobrenome e data de nascimento da pessoa
 
@@ -41,11 +41,39 @@ calcule e imprima a idade da pessoa (em anos), seu intervalo de frequência card
 
     9- A classe HeartRates dete incluir um método que calcule e retorne a frequência cardíaca alvo da pessoa.
 
+    10- Monte o front-end
+
  */
+
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
 
+        JOptionPane.showMessageDialog(null,
+                "Bem Vindo! \n " +
+                        "A Calculadora de Frequência Cardiaca Alvo \n" +
+                        "Desenvolvido por: Victor Teixeira Silva");
+
+        String firstName = JOptionPane.showInputDialog("Informe seu primeiro nome:");
+        String lastName = JOptionPane.showInputDialog("Informe seu sobrenome:");
+        String yearString = JOptionPane.showInputDialog("Informe o ano em que você nasceu:");
+        String monthString = JOptionPane.showInputDialog("Informe o Mês em que você nasceu:");
+        String dayString = JOptionPane.showInputDialog("Informe o dia que você nasceu:");
+
+        DateOfBirth dateOfBirth = new DateOfBirth(Integer.parseInt(dayString),Integer.parseInt(monthString),Integer.parseInt(yearString));
+
+        HeartRates heartRates = new HeartRates(firstName, lastName, dateOfBirth);
+
+        JOptionPane.showMessageDialog(null,
+                "\n" +
+                "\n" +
+                "Olá " + heartRates.getFirstName() + " " + heartRates.getLastName() + ",\n" +
+                "Data de Nascimento: " + dateOfBirth + ",\n" +
+                "Idade em Anos: " + dateOfBirth.ageInYears() + " anos,\n" +
+                "Sua Frequência cardiaca máxima é: " + heartRates.maximumHeartRate() + ",\n" +
+                "Seu intervalo de Frequência cardiaca alvo é: " + heartRates.targetHeartRate() + ".\n" +
+                "\n" +
+                "\n");
     }
 }
