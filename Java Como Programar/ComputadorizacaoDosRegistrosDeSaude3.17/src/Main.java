@@ -1,7 +1,6 @@
 import javax.swing.*;
 
 /*
-    @Autor Victor Teixeira Silva
 
     Uma questão relacionada à assistência médica discutida ultimamente nos veículos de comunicação é a computadorização
 dos registros de saúde. Essa possibilidade está sendo abordada de maneira cautelosa por causa da preocupação quanto à
@@ -51,6 +50,10 @@ cardíaca alvo. Ele também deve exibir o gráfico de valores IMC do Exercício 
     Idade em Anos, IMC, frequência cardiaca maxima, intervalo de frequencia alvo e Grafico de valores IMC).
 
 
+ */
+/**
+ * @author Victor Teixeira Silva
+ * @version 1.0
  */
 public class Main {
     public static void main(String[] args) {

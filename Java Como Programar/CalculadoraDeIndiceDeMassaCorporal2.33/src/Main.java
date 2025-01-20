@@ -1,8 +1,6 @@
 import javax.swing.*;
 
 /*
-    @Autor: Victor Teixeira Silva
-
     Introduzimos a calculadora de índice de massa corporal (IMC) no Exercício 1.10. As fórmulas para calcular o IMC são
 IMC = pesoEmLibras X 703 / alturaEmPolegadas^2 ou IMC = pesoEmQuilogramas / alturaEmMetros^2 Crie um aplicativo de
 calculadora IMC que leia o peso do usuário em libras e a altura em polegadas (ou, se prefirir, o peso em quilogramas a
@@ -17,6 +15,11 @@ Obese: 30 or greater
 ================================
 
 
+ */
+
+/**
+ * @author Victor Teixeira Silva
+ * @version 1.0
  */
 public class Main {
     public static void main(String[] args) {

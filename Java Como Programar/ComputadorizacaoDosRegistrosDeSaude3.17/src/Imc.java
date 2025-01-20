@@ -1,8 +1,11 @@
 /*
-    @Autor: Victor Teixeira Silva.
 
     7- Crie a classe Imc adptando o código do exercicio 2.33.
 
+ */
+/**
+ * @author Victor Teixeira Silva
+ * @version 1.0
  */
 public class Imc {
 

@@ -1,6 +1,4 @@
 /*
-    @Autor: Victor Teixeira Silva
-
     2- Crie a classe HealthProfile "inicial" para uma pessoa.
 
     3- Os atributos da classe devem incluir nome, sexo, data de nascimento, altura (em metros) e peso (em quilogramas) da pessoa.
@@ -9,6 +7,10 @@
 
     5- forneça métodos set e get.
 
+ */
+/**
+ * @author Victor Teixeira Silva
+ * @version 1.0
  */
 public class HealthProfile {
 

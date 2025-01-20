@@ -1,7 +1,5 @@
 /*
 
-    @Autor: Victor Teixeira Silva
-
     (Classe Invoice) Crie uma classe chamada Invoice para que uma loja de suprimentos de informática a utilize para representar
     uma fatura de um item vendido nela. Uma Invoice (fatura) deve incluir quatro partes das informações como variáveis de instância -
     O número (tipo String), a descrição (tipo String), a quantidade comprada detro variáveis de instância.
@@ -13,7 +11,10 @@
     capacidades da classe invoice.
 
  */
-
+/**
+ * @author Victor Teixeira Silva
+ * @version 1.0
+ */
 public class Invoice {
 
 

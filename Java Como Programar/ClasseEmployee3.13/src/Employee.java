@@ -1,6 +1,4 @@
 /*
- @Autor Victor Teixeira Silva
-
  (Classe Employee) Crie uma classe chamada Employee que inclua três variáveis de instância - um primeiro nome (tipo String),
  um sobrenome (tipo String) e um salário mensal (double). Forneça um construtor que inicializa as três variáveis de instância. Forneça
  um método set e um get para cada variável de instância. Se o salário mensal não for positivo, não configure seu valor. Escreva um aplicativo
@@ -8,6 +6,10 @@
  objeto. Então dê a cada Employee um qaumento de 10% e exiba novamente o salário anual de cada Employee.
 
 
+ */
+/**
+ * @author Victor Teixeira Silva
+ * @version 1.0
  */
 public class Employee {
 

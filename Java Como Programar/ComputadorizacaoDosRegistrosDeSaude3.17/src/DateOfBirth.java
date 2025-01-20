@@ -1,8 +1,7 @@
-/*
-    @Autor Victor Teixeira Silva
-
+/**
+ * @author Victor Teixeira Silva
+ * @version 1.0
  */
-
 import java.time.LocalDateTime;
 
 public class DateOfBirth {

@@ -1,8 +1,10 @@
 /*
-    @Autor: Victor Teixeira Silva
-
     6- Adapte a classe HeartRates para Usar o HealthProfile para os calculos.
 
+ */
+/**
+ * @author Victor Teixeira Silva
+ * @version 1.0
  */
 public class HeartRates {
 
