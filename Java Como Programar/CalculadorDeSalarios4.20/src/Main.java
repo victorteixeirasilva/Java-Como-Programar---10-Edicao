@@ -12,7 +12,20 @@ trabalhadas além das 40 horas. Você recebe uma lista de empregados, o número 
 passada e o salário-hora de cada um. Seu programa deve aceitar a entrada dessas informações para cada empregado e, então,
 determinar e exibir o salário bruto do empregado. Utilize a classe Scanner par inserir os dados.
 
+Anotações:
+    Programa recebe informações de 3 empregados, e retorna o salário bruto do empregado.
+
+    Repita 3 vezes
+       Sistema recebe nome do empregado.
+       Sistema recebe o número de horas trabalhadas na semana passsada.
+       Sistema recebe o salário-hora.
+
+       Sistema Calcula e Exibe o salário do empregado
+
+
  */
+
+import java.util.Scanner;
 
 /**
  * @author Victor Teixeira Silva
@@ -20,6 +33,32 @@ determinar e exibir o salário bruto do empregado. Utilize a classe Scanner par 
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Scanner scanner = new Scanner(System.in);
+
+        int count = 1;
+
+        while (count <= 3){
+            System.out.println("Informe o nome do empregado: ");
+            String nome = scanner.nextLine();
+            System.out.println("Informe as horas trabalhadas na ultima semana: ");
+            double numHoras = scanner.nextInt();
+            System.out.println("Informe o valor do salario-hora: ");
+            double salHora = scanner.nextInt();
+            double horasExtras = 0;
+            double salario;
+
+            if (numHoras > 40){
+                horasExtras = numHoras-40;
+            }
+
+            salario = salHora*40;
+            salario += horasExtras*((salHora*0.5)+salHora);
+
+            System.out.println(nome);
+            System.out.println("Seu salário bruto é: "+salario);
+            count++;
+        }
+
+
     }
 }
