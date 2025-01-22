@@ -17,6 +17,15 @@
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+
+        System.out.println("N   10*N   100*N   1000*N");
+        System.out.println();
+        int count = 1;
+
+        while (count <= 5) {
+            System.out.println(count+"   "+count*10+"   "+count*100+"   "+count*1000);
+            count++;
+        }
+
     }
 }
