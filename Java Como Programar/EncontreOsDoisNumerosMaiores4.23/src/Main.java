@@ -15,12 +15,45 @@ Anotações:
     Sistema compara todos os números adicionado a lista e imprime os dois maiores
 
  */
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * @author Victor Teixeira Silva
  * @version 1.0
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        int countador = 1;
+       List<Double> lista = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        double ultimoMaior = 0;
+        double maior = 0;
+
+        while (countador <= 10){
+            System.out.println("Informe um número: ");
+            Double numero = scanner.nextDouble();
+            lista.add(numero);
+            for (Double numero1 : lista) {
+                if (numero >= numero1 && numero >= maior){
+                    ultimoMaior = maior;
+                    maior = numero;
+                }
+            }
+            for (Double numero2 : lista){
+                if (numero2 != maior) {
+                    if (numero2 >= ultimoMaior){
+                        ultimoMaior = numero2;
+                    }
+                }
+            }
+
+            countador++;
+        }
+
+        System.out.println("O dois maiores números são: "+ultimoMaior+" "+maior);
+
     }
 }
