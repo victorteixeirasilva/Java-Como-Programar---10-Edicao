@@ -9,12 +9,36 @@ posicional de 2, depois 4, depois 8 e assim por diante. O equivalente decimal do
 ou 1+0+8 ou 13.]
 
  */
+
+import java.util.Scanner;
+
 /**
  * @author Victor Teixeira Silva
  * @version 1.0
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite um número binário: ");
+        String numeroBinario = scanner.nextLine();
+
+        int decimal = converterBinarioParaDecimal(numeroBinario);
+
+        System.out.println("O número decimal equivalente é: " + decimal);
+    }
+
+    public static int converterBinarioParaDecimal(String binario) {
+        int decimal = 0;
+        int potencia = 0;
+
+        // Percorre os dígitos do binário da direita para a esquerda
+        for (int i = binario.length() - 1; i >= 0; i--) {
+            int digito = Character.getNumericValue(binario.charAt(i));
+            decimal += digito * Math.pow(2, potencia);
+            potencia++;
+        }
+
+        return decimal;
     }
 }
