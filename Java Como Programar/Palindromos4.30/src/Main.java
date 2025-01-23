@@ -6,12 +6,31 @@ Escreva um aplicativo que lê em um inteiro de cinco dígitos se ele é ou não 
 dígitos, exiba uma mensagem de erro e permita que o usuário insira um novo valor.
 
  */
+
+import java.util.Scanner;
+
 /**
  * @author Victor Teixeira Silva
  * @version 1.0
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Informe uma squencia de 5 caracteres e vamos informar se é ou não um Palíndromo:");
+    String carcteres = scanner.nextLine();
+    if (carcteres.length() != 5){
+        System.out.println("Sequencia Invalida! (menor ou maior que 5 caracteres!)");
+    }
+    StringBuilder sb = new StringBuilder(carcteres);
+    sb.reverse();
+
+    if (sb.toString().equals(carcteres)){
+        System.out.println("Sequencia é um Palíndromo!");
+    } else {
+        System.out.println("Sequencia não é um Palíndromo!");
+    }
+
+
     }
 }
