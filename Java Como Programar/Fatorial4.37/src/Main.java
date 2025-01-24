@@ -10,12 +10,28 @@ número de termos a calcular.
 e^x = 1 + x/1! + x^2/2! + x^3/3! + ...
 
  */
+
+import java.util.Scanner;
+
 /**
  * @author Victor Teixeira Silva
  * @version 1.0
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite um número inteiro não negativo: ");
+        int n = scanner.nextInt();
+
+        long fatorial = calcularFatorial(n);
+
+        System.out.println(n + "! = " + fatorial);
+    }
+    public static long calcularFatorial(int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return n * calcularFatorial(n - 1);
+        }
     }
 }

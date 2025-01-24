@@ -33,6 +33,6 @@ public class Main {
         } else {
             System.out.println("Os lados não formam um triângulo retângulo.");
         }
-        
+
     }
 }
