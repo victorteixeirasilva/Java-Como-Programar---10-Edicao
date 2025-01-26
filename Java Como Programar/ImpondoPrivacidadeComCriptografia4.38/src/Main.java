@@ -13,13 +13,30 @@ e descriptografe (revertendo o esquema de criptografia) para formar o número or
 pesquise a "criptografia de chave pública" em gral e o esquema de chave pública específica PGP (Pretty Good Privacy).
 Você também pode querer investigar o esquema RSA, que é amplamente usado em aplicativos robustos industriais.]
 
+
  */
+
+import javax.swing.*;
+import java.util.Scanner;
+
 /**
  * @author Victor Teixeira Silva
  * @version 1.0
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+
+        String option = Interface.bemVindo();
+
+        switch (Integer.parseInt(option)){
+            case 1:
+                Interface.criptografar();
+                break;
+            case 2:
+                Interface.descriptografar();
+                break;
+            default:
+                break;
+        }
     }
 }
