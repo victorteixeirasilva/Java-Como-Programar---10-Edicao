@@ -10,6 +10,21 @@ premissa simplificadora de que a taxa de crescimento atual ficará constante. Im
 primeira Coluna deve exibir os anos de ano 1 ao ano 75. a segunda coluna deve exibir a população mundial esperada no fim
 desse ano. Utilizando os seus resultados, determine o ano em que a população dobraria com relação ao número de hoje se a
 taxa de crescimento do ano atual persistisse.
+
+Anotações:
+    Taxa 1,02% -> / 100 -> 0,012
+
+    8,073
+
+    Escreva um programa que calcule o crescimento demográfico mundial anual dos próximos 75 anos.
+
+    Imprima os resultados numa tabela
+
+    A primeira Coluna deve exibir os anos de ano 1 ao ano 75
+
+    a segunda coluna deve exibir a população mundial esperada no fim desse ano
+
+    determine o ano em que a população dobraria com relação ao número de hoje se a taxa de crescimento do ano atual persistisse.
  */
 /**
  * @author Victor Teixeira Silva
@@ -17,6 +32,25 @@ taxa de crescimento do ano atual persistisse.
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+
+        System.out.print("* "+"Ano"+"  *" + " População Mundial Esperada   *\n");
+
+        double quantidadeDePessoas = 8.073;
+        double taxaDeCrescimentoAnual = 0.012;
+
+        int ano2x = 0;
+
+        for (int ano = 1; ano <= 75; ano++){
+            quantidadeDePessoas = (quantidadeDePessoas*taxaDeCrescimentoAnual)+quantidadeDePessoas;
+
+            if (quantidadeDePessoas>=8.073*2&&quantidadeDePessoas<=8.073*2.03) {
+                 ano2x = ano;
+            }
+
+            System.out.print("* "+ano+"   *"+" "+quantidadeDePessoas+" milhoes   *\n");
+        }
+
+        System.out.println("No Ano("+ano2x+") a população dobra sua quantidade inicial.");
+
     }
 }
