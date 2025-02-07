@@ -29,6 +29,7 @@
 public class Main {
     public static void main(String[] args) {
 
+
         for (int b = 1; b <= 2; b++){
             for (int c = 1; c <= 4; c++){
                 System.out.print(" ");
@@ -128,6 +129,8 @@ public class Main {
                 System.out.print("*");
             }
         }
-        
+
+        System.out.println();
+
     }
 }
