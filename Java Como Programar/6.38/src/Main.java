@@ -3,22 +3,9 @@ import java.util.Scanner;
 
 /**
  * @author Victor Teixeira Silva
- * @version 3.0
+ * @version 4.0
  *
- * @description 6.36 -> 6.37 - (Instrução auxiliada por computador: Monitorando o desempenho do aluno) Sistemas mais
- *              sofisticados de instruções auxiliadas por computador monitoram o desempenho do aluno durante um período
- *              de tempo. A decisão sobre um novo tópico frequentemente é baseado no sucesso do aluno com tópicos prévios.
- *
- *             Modifique o programa de Exercício 6.36 para contar o número de respostas corretas e incorretas digitadas pelo aluno.
- *
- *             Depois que o aluno digitar 10 respostas, seu programa deve calcular a porcentagem das que estão corretas.
- *
- *             Se a porcentagem for menor que 75%, exiba “Peça ajuda extra ao seu professor.” e, então, reinicialize o
- *             programa para que outro estudante possa tentá-lo.
- *
- *             Se a porcentagem for 75% ou maior exiba “Parabéns, você está pronto para avançar para o próximo nível!”
- *             e, então reinicialize o programa para que outro estudante possa tentá-lo.
- *
+ * @description 6.37 -> 6.38 - (Instrução auxiliada por computador: níveis de dificuldade) As questão 6.35 a 6.37 desenvolveram um programa de instrução assistida por computador a fim de ajudar a ensinar a multiplicação para um aluno do ensino fundamental. Modifique o programa para permitir que o usuário insira um nível de dificuldade 1, o programa deve utilizar apenas números de um único dígito nos problemas; em um nível de dificuldade 2, os números com dois dígitos, e assim por diante.
  */
 public class Main {
 
