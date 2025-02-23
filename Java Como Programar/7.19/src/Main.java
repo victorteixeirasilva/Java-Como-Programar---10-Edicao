@@ -26,6 +26,7 @@ public class Main {
     public static <exibindo> void main(String[] args) {
         //Iniciando o array para armazenar poltronas
         ArrayList<Boolean> assentos = new ArrayList<Boolean>(10);
+
         //Iniciando scanner para receber os dados.
         Scanner scanner = new Scanner(System.in);
 
