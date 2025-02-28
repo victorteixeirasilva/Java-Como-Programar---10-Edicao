@@ -54,8 +54,8 @@ import java.security.SecureRandom;
  *
  */
 public class Main {
-    static int pLebre = 1;
-    static int pTartaruga = 1;
+    static int posicaoLebre = 1;
+    static int posicaoTartaruga = 1;
     static SecureRandom secureRandom = new SecureRandom();
     static String[] corrida = new String[70];
 
@@ -70,15 +70,15 @@ public class Main {
             movimentoTartaruga();
             movimentoLebre();
             exibirCorrida();
-            if ((pLebre == 69) && (pTartaruga == 69)) {
+            if ((posicaoLebre == 69) && (posicaoTartaruga == 69)) {
                 System.out.println(" OCORREU UM EMPATE ");
                 relogio = -1;
-                pLebre = 1;
-                pTartaruga = 1;
-            } else if (pTartaruga == 69) {
+                posicaoLebre = 1;
+                posicaoTartaruga = 1;
+            } else if (posicaoTartaruga == 69) {
                 System.out.println(" A TARTARUGA VENCEU !!! EH !!! ");
                 break;
-            } else if (pLebre == 69) {
+            } else if (posicaoLebre == 69) {
                 System.out.println(" A LEBRE GANHOU. OH. ");
                 break;
             }
@@ -89,13 +89,13 @@ public class Main {
 
     public static void exibirCorrida(){
         for (int i = 0; i < 70; i++){
-            if (pTartaruga == pLebre){
+            if (posicaoTartaruga == posicaoLebre){
                 System.out.println("AI!!!");
-                corrida[pTartaruga] = "TH";
+                corrida[posicaoTartaruga] = "TH";
             } else {
-                corrida[pLebre] = "H";
-                corrida[pTartaruga] = "T";
-                if ((i != pLebre) && (i != pTartaruga)){
+                corrida[posicaoLebre] = "H";
+                corrida[posicaoTartaruga] = "T";
+                if ((i != posicaoLebre) && (i != posicaoTartaruga)){
                     corrida[i] = "*";
                 }
             }
@@ -108,22 +108,22 @@ public class Main {
     public static void movimentoTartaruga(){
         int movimentoTartaruga = secureRandom.nextInt(1, 10);
         if ((movimentoTartaruga >= 1) && (movimentoTartaruga <= 5)){
-            if (pTartaruga + 3 < 70){
-                pTartaruga += 3;
+            if (posicaoTartaruga + 3 < 70){
+                posicaoTartaruga += 3;
             } else {
-                pTartaruga = 69;
+                posicaoTartaruga = 69;
             }
         } else if ((movimentoTartaruga >= 6) && (movimentoTartaruga <= 8)) {
-            if ((pTartaruga - 6 >= 1)){
-                pTartaruga -= 6;
+            if ((posicaoTartaruga - 6 >= 1)){
+                posicaoTartaruga -= 6;
             } else {
-                pTartaruga = 1;
+                posicaoTartaruga = 1;
             }
         } else if ((movimentoTartaruga >= 9) && (movimentoTartaruga <= 10)) {
-            if (pTartaruga + 1 < 70){
-                pTartaruga += 1;
+            if (posicaoTartaruga + 1 < 70){
+                posicaoTartaruga += 1;
             } else {
-                pTartaruga = 69;
+                posicaoTartaruga = 69;
             }
         }
     }
@@ -131,28 +131,28 @@ public class Main {
     public static void movimentoLebre(){
         int movimentoLebre = secureRandom.nextInt(1, 10);
         if ((movimentoLebre >= 3) && (movimentoLebre <= 4)) {
-            if (pLebre + 9 < 70){
-                pLebre += 9;
+            if (posicaoLebre + 9 < 70){
+                posicaoLebre += 9;
             } else {
-                pLebre = 69;
+                posicaoLebre = 69;
             }
         } else if (movimentoLebre == 5) {
-            if ((pLebre - 12 >= 1)){
-                pLebre -= 12;
+            if ((posicaoLebre - 12 >= 1)){
+                posicaoLebre -= 12;
             } else {
-                pLebre = 1;
+                posicaoLebre = 1;
             }
         } else if ((movimentoLebre >= 6) && (movimentoLebre <= 8)) {
-            if (pLebre + 1 < 70) {
-                pLebre += 1;
+            if (posicaoLebre + 1 < 70) {
+                posicaoLebre += 1;
             } else {
-                pLebre = 69;
+                posicaoLebre = 69;
             }
         } else if ((movimentoLebre >= 9) && (movimentoLebre <= 10)) {
-            if (pLebre - 2 >= 1) {
-                pLebre -= 2;
+            if (posicaoLebre - 2 >= 1) {
+                posicaoLebre -= 2;
             } else {
-                pLebre = 1;
+                posicaoLebre = 1;
             }
         }
     }
