@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import static java.lang.Integer.parseInt;
+
 
 /**
  * @author Victor Teixeira Silva
@@ -27,9 +26,14 @@ import static java.lang.Integer.parseInt;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("TEST");
-        System.out.println(testA());
-        System.out.println(testB());
+        System.out.println("BATERIA DE TESTES");
+        System.out.println("Teste para determinar se a função (A) esstá correta que determina se a mão tem um par (True para funcionando corretamente e False se estiver falhando) " + TestTDD.testA());
+        System.out.println("Teste para determinar se a função (B) esstá correta que determina se a mão tem dois pares (True para funcionando corretamente e False se estiver falhando) " + TestTDD.testB());
+        System.out.println("Teste para determinar se a função (C) esstá correta que determina se a mão tem uma trinca (True para funcionando corretamente e False se estiver falhando) " + TestTDD.testC());
+        System.out.println("Teste para determinar se a função (D) esstá correta que determina se a mão tem uma quadra (True para funcionando corretamente e False se estiver falhando) " + TestTDD.testD());
+        System.out.println("Teste para determinar se a função (E) esstá correta que determina se a mão é um flush (True para funcionando corretamente e False se estiver falhando) " + TestTDD.testE());
+        System.out.println("Teste para determinar se a função (F) esstá correta que determina se a mão é um Straight (True para funcionando corretamente e False se estiver falhando) " + TestTDD.testF());
+        System.out.println("Teste para determinar se a função (G) esstá correta que determina se a mão é um Full House (True para funcionando corretamente e False se estiver falhando) " + TestTDD.testG());
 
 
 
@@ -37,59 +41,7 @@ public class Main {
 
     }
 
-    public static boolean testA(){
-        DeckOfCards myDeckOfCards = new DeckOfCards();
-
-        ArrayList<Card> hand1 = new ArrayList<>();
-
-        hand1.add(new Card("2", "Espada"));
-        hand1.add(new Card("2", "Coração"));
-        hand1.add(new Card("6", "Coração"));
-        hand1.add(new Card("7", "Espada"));
-
-        ArrayList<Card> hand2 = new ArrayList<>();
-
-        hand2.add(new Card("1", "Espada"));
-        hand2.add(new Card("2", "Coração"));
-        hand2.add(new Card("6", "Coração"));
-        hand2.add(new Card("7", "Espada"));
 
 
-        boolean testeOk = myDeckOfCards.temUmPar(hand1);
-        boolean testeNoOk = myDeckOfCards.temUmPar(hand2);
 
-        if (testeOk && !testeNoOk){
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public static boolean testB(){
-        DeckOfCards myDeckOfCards = new DeckOfCards();
-
-        ArrayList<Card> hand1 = new ArrayList<>();
-
-        hand1.add(new Card("2", "Espada"));
-        hand1.add(new Card("2", "Coração"));
-        hand1.add(new Card("6", "Coração"));
-        hand1.add(new Card("6", "Espada"));
-
-        ArrayList<Card> hand2 = new ArrayList<>();
-
-        hand2.add(new Card("1", "Espada"));
-        hand2.add(new Card("1", "Coração"));
-        hand2.add(new Card("6", "Coração"));
-        hand2.add(new Card("7", "Espada"));
-
-
-        boolean testeOk = myDeckOfCards.temDoisPares(hand1);
-        boolean testeNoOk = myDeckOfCards.temDoisPares(hand2);
-
-        if (testeOk && !testeNoOk){
-            return true;
-        } else {
-            return false;
-        }
-    }
 }

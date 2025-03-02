@@ -1,5 +1,7 @@
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * @author Victor Teixeira Silva
@@ -16,8 +18,8 @@ public class DeckOfCards {
     // construtor preenche baralho de cartas
     public DeckOfCards() {
 
-        String[] faces = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
-        String[] suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
+        String[] faces = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13" };
+        String[] suits = { "Coração", "Ouro", "Paus", "Espada" };
         deck = new Card[NUMBER_OF_CARDS]; // cria array de objetos Card
         currentCard = 0; // a primeira Card distribuída será o deck[0]
 
@@ -78,7 +80,6 @@ public class DeckOfCards {
         int idexCard1Par1 = -1;
         int idexCard2Par1 = -1;
         int idexCard1Par2 = -1;
-        int idexCard2Par2 = -1;
 
         for (int i = 0; i < hand.size(); i++){
             Card card = hand.get(i);
@@ -94,7 +95,6 @@ public class DeckOfCards {
                             if (idexCard1Par1 != b && idexCard2Par1 != i){
                                 if (idexCard1Par2 == -1){
                                     idexCard1Par2 = i;
-                                    idexCard2Par2 = b;
                                     quantidadeDePares++;
                                 }
 
@@ -107,4 +107,217 @@ public class DeckOfCards {
         return quantidadeDePares == 2;
     }
 
+    public boolean temTrinca(ArrayList<Card> hand){
+
+        for (int i = 0; i < hand.size(); i++){
+            Card card = hand.get(i);
+
+            for (int x = 0; x < hand.size(); x++){
+                Card card1 = hand.get(x);
+
+                if (i != x){
+                    for (int a = 0; a < hand.size(); a++){
+                       Card card2 = hand.get(a);
+                       if (
+                           i != a &&
+                           a != x
+                       ){
+                           if (
+                                   card.getFace().equals(card1.getFace()) &&
+                                   card.getFace().equals(card2.getFace())
+                           ){
+                               return true;
+                           }
+
+                       }
+
+
+                    }
+
+
+                }
+
+            }
+
+        }
+
+        return false;
+
+    }
+
+    public boolean temQuadra(ArrayList<Card> hand){
+
+        for (int i = 0; i < hand.size(); i++){
+            Card card = hand.get(i);
+
+            for (int x = 0; x < hand.size(); x++){
+                Card card1 = hand.get(x);
+
+                if (i != x){
+                    for (int a = 0; a < hand.size(); a++){
+                        Card card2 = hand.get(a);
+                        if (
+                                i != a &&
+                                a != x
+                        ){
+                            for (int b = 0; b < hand.size(); b++){
+                                Card card3 = hand.get(b);
+
+                                if (
+                                        b != i &&
+                                        b != x &&
+                                        b != a
+                                ){
+                                    if (
+                                            card.getFace().equals(card1.getFace()) &&
+                                            card.getFace().equals(card2.getFace()) &&
+                                            card.getFace().equals(card3.getFace())
+                                    ){
+                                        return true;
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+
+                    }
+
+
+                }
+
+            }
+
+        }
+
+        return false;
+
+    }
+
+    public boolean temFlush(ArrayList<Card> hand) {
+        for (int i = 0; i < hand.size(); i++){
+            Card card = hand.get(i);
+
+            for (int x = 0; x < hand.size(); x++){
+                Card card1 = hand.get(x);
+
+                if (i != x){
+                    for (int a = 0; a < hand.size(); a++){
+                        Card card2 = hand.get(a);
+                        if (
+                                i != a &&
+                                a != x
+                        ){
+                            for (int b = 0; b < hand.size(); b++){
+                                Card card3 = hand.get(b);
+
+                                if (
+                                        b != i &&
+                                        b != x &&
+                                        b != a
+                                ){
+                                  for (int c = 0; c < hand.size(); c++){
+                                      Card card4 = hand.get(c);
+
+                                      if (
+                                              c != i &&
+                                              c != x &&
+                                              c != a &&
+                                              c != b
+                                      ){
+
+                                          if (
+                                                  card.getSuit().equals(card1.getSuit()) &&
+                                                  card.getSuit().equals(card2.getSuit()) &&
+                                                  card.getSuit().equals(card3.getSuit()) &&
+                                                  card.getSuit().equals(card4.getSuit())
+                                          ){
+                                              return true;
+                                          }
+                                      }
+                                  }
+
+                                }
+
+                            }
+
+                        }
+
+
+                    }
+
+
+                }
+
+            }
+
+        }
+
+        return false;
+    }
+
+    public boolean temStraight(ArrayList<Card> hand) {
+        hand.sort(Comparator.comparing(Card::getFace));
+
+        for (int a = 0; a < hand.size(); a++){
+            int valorCard1 = Integer.parseInt(hand.get(a).getFace());
+
+            for (int b = 0; b < hand.size(); b++){
+                if (b != a){
+                    int valorCard2 = Integer.parseInt(hand.get(b).getFace());
+
+                    if (valorCard2 == valorCard1-1){
+                        for (int c = 0; c < hand.size(); c++){
+                            if (
+                                    c != a &&
+                                    c != b
+                            ){
+                                int valorCard3 = Integer.parseInt(hand.get(c).getFace());
+
+                                if (valorCard3 == valorCard2-1){
+                                    for (int d = 0; d < hand.size(); d++){
+                                        if (
+                                                d != a &&
+                                                d != b &&
+                                                d != c
+                                        ) {
+                                            int valorCard4 = Integer.parseInt(hand.get(d).getFace());
+
+                                            if (valorCard4 == valorCard3-1){
+                                                for (int e = 0; e < hand.size(); e++){
+                                                    if (
+                                                            e != a &&
+                                                            e != b &&
+                                                            e != c &&
+                                                            e != d
+                                                    ){
+                                                        int valorCard5 = Integer.parseInt(hand.get(e).getFace());
+
+                                                        if (valorCard5 == valorCard4-1){
+                                                            return true;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+        return false;
+    }
+
+    public boolean temFullHouse(ArrayList<Card> hand) {
+        return temUmPar(hand) && temTrinca(hand);
+    }
 }
