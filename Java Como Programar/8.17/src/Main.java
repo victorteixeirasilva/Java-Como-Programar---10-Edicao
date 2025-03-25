@@ -45,8 +45,10 @@ public class Main {
     public static void main(String[] args) {
         var ticTacToe = new TicTacToe();
 
+        System.out.println("");
+
         System.out.println(ticTacToe);
-        ticTacToe.jogar();
+        ticTacToe.jogarDoisJogadores();
         System.exit(1);
     }
 }

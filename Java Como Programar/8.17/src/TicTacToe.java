@@ -39,7 +39,7 @@ public class TicTacToe {
         this.tabuleiro = tabuleiro;
     }
 
-    public void jogar(){
+    public void jogarDoisJogadores(){
         while (true){
 
             if (deuVelha()){
