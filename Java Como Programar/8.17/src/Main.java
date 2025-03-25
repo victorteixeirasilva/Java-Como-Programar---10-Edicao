@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * @author Victor Teixeira Silva
  * @version 1.0
@@ -42,13 +44,28 @@
  *
  */
 public class Main {
+
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         var ticTacToe = new TicTacToe();
 
-        System.out.println("");
+        System.out.println("Escolha uma opção:\n" +
+                "1 - Jogador 1 VS Jogador 2\n" +
+                "2 - Jogador 1 VS Computador\n");
+        int opcao = scanner.nextInt();
+        switch (opcao) {
+            case 1:
+                System.out.println(ticTacToe);
+                ticTacToe.jogarDoisJogadores();
+                break;
+            case 2:
+                System.out.println(ticTacToe);
+                ticTacToe.jogarContraBot();
+                break;
+            default:
+                System.exit(1);
+        }
 
-        System.out.println(ticTacToe);
-        ticTacToe.jogarDoisJogadores();
-        System.exit(1);
     }
 }

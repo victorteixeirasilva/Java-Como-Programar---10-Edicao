@@ -1,3 +1,4 @@
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 /**
@@ -28,6 +29,7 @@ public class TicTacToe {
 
     private Marcadores[][] tabuleiro = new Marcadores[3][3];
     private Scanner scanner = new Scanner(System.in);
+    private SecureRandom random = new SecureRandom();
 
     public TicTacToe() {
         Marcadores[][] tabuleiro = new Marcadores[3][3];
@@ -210,11 +212,76 @@ public class TicTacToe {
         for (int a = 0; a < 3; a++){
             System.out.print(a + " - ");
             for (int b = 0; b < 3; b++){
-                System.out.print("|" + tabuleiro[a][b] + "|");
+                System.out.print("|" + tabuleiro[a][b].getValue() + "|");
             }
             System.out.println();
         }
         System.out.println("    0 - 1 - 2 ");
         return ticTacToe;
+    }
+
+    public void jogarContraBot() {
+        while (true){
+
+            if (deuVelha()){
+                System.out.println("Deu velha!");
+                System.out.println(toString());
+                return;
+            }
+
+            boolean opcao = true;
+            while (opcao) {
+                try {
+                    moverJogador(1);
+                    opcao = false;
+                } catch (Exception e) {
+                    System.out.println("Posição já ocupada, escolha outra!");
+                }
+            }
+            if (venceu(1)){
+                System.out.println("Jogador 1 Venceu");
+                System.out.println(toString());
+                return;
+            }
+            if (deuVelha()){
+                System.out.println("Deu velha!");
+                System.out.println(toString());
+                return;
+            }
+
+            boolean opcao2 = true;
+            while (opcao2) {
+                try {
+                    moverBot();
+                    opcao2 = false;
+                } catch (Exception e) {
+                    System.out.println("Bot está esolhendo posição!");
+                }
+            }
+            if (venceu(2)){
+                System.out.println("Bot 2 Venceu");
+                System.out.println(toString());
+                return;
+            }
+            if (deuVelha()){
+                System.out.println("Deu velha!");
+                System.out.println(toString());
+                return;
+            }
+        }
+    }
+
+    private void moverBot() {
+        int coluna = random.nextInt(0, 3);
+
+        int linha = random.nextInt(0, 3);
+
+        if (this.tabuleiro[linha][coluna] == Marcadores.EMPTY){
+            this.tabuleiro[linha][coluna] = Marcadores.O;
+        } else {
+            throw new IllegalArgumentException("Posição não está vazia");
+        }
+
+        System.out.println(toString());
     }
 }

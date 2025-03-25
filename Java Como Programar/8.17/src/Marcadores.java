@@ -1,7 +1,7 @@
 public enum Marcadores {
     X("X"),
     O("O"),
-    EMPTY("EMPTY");
+    EMPTY("-");
 
     private final String value; // Campo para armazenar o valor associado
 
