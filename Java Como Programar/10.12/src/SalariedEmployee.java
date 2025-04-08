@@ -7,9 +7,9 @@ public class SalariedEmployee extends Employee
 
     // construtor
     public SalariedEmployee(String firstName, String lastName,
-                            String socialSecurityNumber, double weeklySalary)
+                            String socialSecurityNumber, double weeklySalary, Date date)
     {
-        super(firstName, lastName, socialSecurityNumber);
+        super(firstName, lastName, socialSecurityNumber, date);
 
         if (weeklySalary < 0.0)
             throw new IllegalArgumentException(

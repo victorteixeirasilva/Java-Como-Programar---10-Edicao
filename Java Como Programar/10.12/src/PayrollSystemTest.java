@@ -7,15 +7,15 @@ public class PayrollSystemTest
     {
         // cria objetos de subclasse
         SalariedEmployee salariedEmployee =
-                new SalariedEmployee("John", "Smith", "111-11-1111", 800.00);
+                new SalariedEmployee("John", "Smith", "111-11-1111", 800.00, new Date(4,8,2003));
         HourlyEmployee hourlyEmployee =
-                new HourlyEmployee("Karen", "Price", "222-22-2222", 16.75, 40);
+                new HourlyEmployee("Karen", "Price", "222-22-2222", 16.75, 40, new Date(8,8,2003));
         CommissionEmployee commissionEmployee =
                 new CommissionEmployee(
-                        "Sue", "Jones", "333-33-3333", 10000, .06);
+                        "Sue", "Jones", "333-33-3333", 10000, .06, new Date(8,8,2003));
         BasePlusCommissionEmployee basePlusCommissionEmployee =
                 new BasePlusCommissionEmployee(
-                        "Bob", "Lewis", "444-44-4444", 5000, .04, 300);
+                        "Bob", "Lewis", "444-44-4444", 5000, .04, 300, new Date(8,8,2003));
 
         System.out.println("Employees processed individually:");
 

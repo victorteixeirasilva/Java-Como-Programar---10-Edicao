@@ -9,10 +9,10 @@ public class BasePlusCommissionEmployee extends CommissionEmployee
     // construtor
     public BasePlusCommissionEmployee(String firstName, String lastName,
                                       String socialSecurityNumber, double grossSales,
-                                      double commissionRate, double baseSalary)
+                                      double commissionRate, double baseSalary, Date date)
     {
         super(firstName, lastName, socialSecurityNumber,
-                grossSales, commissionRate);
+                grossSales, commissionRate, date);
 
         if (baseSalary < 0.0) // valida baseSalary
             throw new IllegalArgumentException("Base salary must be >= 0.0");

@@ -9,9 +9,9 @@ public class CommissionEmployee extends Employee
     // construtor
     public CommissionEmployee(String firstName, String lastName,
                               String socialSecurityNumber, double grossSales,
-                              double commissionRate)
+                              double commissionRate, Date date)
     {
-        super(firstName, lastName, socialSecurityNumber);
+        super(firstName, lastName, socialSecurityNumber, date);
 
         if (commissionRate <= 0.0 || commissionRate >= 1.0) // valida
             throw new IllegalArgumentException(

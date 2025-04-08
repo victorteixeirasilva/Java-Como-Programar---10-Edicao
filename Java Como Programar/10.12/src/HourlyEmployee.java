@@ -8,9 +8,9 @@ public class HourlyEmployee extends Employee
 
     // construtor
     public HourlyEmployee(String firstName, String lastName,
-                          String socialSecurityNumber, double wage, double hours)
+                          String socialSecurityNumber, double wage, double hours, Date date)
     {
-        super(firstName, lastName, socialSecurityNumber);
+        super(firstName, lastName, socialSecurityNumber, date);
 
         if (wage < 0.0) // valida remuneração
             throw new IllegalArgumentException(
