@@ -1,4 +1,10 @@
-package PACKAGE_NAME;
+public class Triangle extends TwoDimensionalShape{
+    public Triangle(float x, float y) {
+        super(x, y);
+    }
 
-public class Triangle {
+    @Override
+    public float getArea() {
+        return (getX()*getY())/2;
+    }
 }

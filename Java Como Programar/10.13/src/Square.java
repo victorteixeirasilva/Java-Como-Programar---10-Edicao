@@ -1,4 +1,10 @@
-package PACKAGE_NAME;
+public class Square extends TwoDimensionalShape{
+    public Square(float x, float y) {
+        super(x, y);
+    }
 
-public class Square {
+    @Override
+    public float getArea() {
+        return getX()*getY();
+    }
 }
